@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yiğit ❤️ Melek - Bizim Hikayemiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Şifre Kilit Ekranı */
+        #lock-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a0b2e, #4c1d95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .lock-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 35px 25px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 360px;
+            width: 100%;
+        }
+
+        .lock-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #f472b6;
+        }
+
+        .lock-card p {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .lock-card input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            outline: none;
+            font-size: 1.1rem;
+            text-align: center;
+            color: white;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .lock-card input::placeholder {
+            color: #cbd5e1;
+            letter-spacing: 1px;
+        }
+
+        .lock-card button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .lock-card button:active {
+            transform: scale(0.98);
+        }
+
+        #error-msg {
+            color: #f43f5e;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            display: none;
+            font-weight: bold;
+        }
+
+        /* Ana İçerik */
+        #main-content {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .header-card h1 {
+            color: #be123c;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .header-card .subtitle {
+            color: #e11d48;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Sayaç Alanı */
+        .timer-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .timer-card h3 {
+            color: #881337;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .timer-box {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .time-unit {
+            background: #ffe4e6;
+            padding: 12px 8px;
+            border-radius: 12px;
+            flex
+          
